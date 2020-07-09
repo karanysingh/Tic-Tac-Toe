@@ -1,0 +1,95 @@
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+.btn {
+  box-shadow: 0 0px 5px 0 #000000;
+  border: 2px solid black;
+  background-color: yellow;
+  font-family: monospace;
+}
+
+.btn:hover {
+  box-shadow: 0 3px 10px 0 #878905;
+  /*transform: rotateX(360deg);*/
+  background-color: yellow;
+}
+
+#winr {
+  opacity: 1;
+}
+
+@media (min-width: 1200px) {
+  .col.text-left {
+    margin-left: 50%;
+  }
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#theme {
+  position: fixed;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  top: 0;
+  z-index: 5;
+}
+
+.container-fluid.text-center.d-flex.flex-column.flex-grow-1.flex-shrink-1.justify-content-around.align-items-center.align-content-around.flex-nowrap {
+  margin-top: 40px;
+}
+
+.icon {
+  margin: 10px;
+  margin-bottom: 30px;
+}
+
+#tictactoe {
+  margin-top: 100px;
+  margin-bottom: -150px;
+}
+
+#winrrow {
+}
+
+#winrcontainer {
+  position: fixed;
+  z-index: -2;
+  background-color: white;
+  left: 0%;
+  opacity: 1;
+}
+
+#winrcolumn {
+  background-color: white;
+  border: 2px solid black;
+  box-shadow: 0 0px 4px brown;
+}
+
+#classic {
+  box-shadow: 0 0 5px blue;
+}
+
+.btn-primary {
+  color: #004438;
+  background-color: yellow;
+  border-color: red;
+}
+
+#maincontainer-1 {
+  margin-top: -40px;
+}
+
+#winr {
+  font-family: monospace;
+}
+
