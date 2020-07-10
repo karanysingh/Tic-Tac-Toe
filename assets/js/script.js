@@ -188,7 +188,7 @@ function modifier( G, inv){
 		}
 function gamebutton_disabler() {
     $(function(){
-        $("input.gamebtn").attr("disabled", true);
+        $(".gamebtn").attr("disabled", true);
       });
 }
 function button_glower(btnId) {
