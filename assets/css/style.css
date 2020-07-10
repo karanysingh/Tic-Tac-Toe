@@ -131,14 +131,14 @@ body {
 
 @keyframes ball {
   0% {
-    /*left: 0;*/
+    left: 0;
     margin-left: 0px;
   }
   50% {
-    /*margin-left: 500px;*/
+    margin-left: 500px;
   }
   100% {
-    margin-left: 90%;
+    margin-left: 900px;
     transform: rotate(360deg);
   }
 }
@@ -189,16 +189,11 @@ body {
   position: fixed;
   animation-name: ball;
   animation-iteration-count: infinite;
-  animation-duration: 2s;
+  animation-duration: 3s;
   animation-direction: alternate;
 }
 
 #football {
   width: 50px;
-}
-
-#rolling {
-  left: 0;
-  width: 100%;
 }
 
