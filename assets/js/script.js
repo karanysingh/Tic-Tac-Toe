@@ -85,7 +85,11 @@ function hard_reset() {
     let i = 0;
     left_tiles_no = 9;
     left_tiles = [1,2,3,4,5,6,7,8,9];
-    player_no = 2;
+    if (mode == 2 ){
+    player_no = 2;}
+    else if (mode == 1 ){
+        player_no = 1;
+    }
     document.getElementById("winrcontainer").style.zIndex = "-2";
     running = 1;
     document.getElementById("winrcontainer").style.opacity = "0.0";
