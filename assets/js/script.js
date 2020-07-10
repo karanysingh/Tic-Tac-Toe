@@ -5,7 +5,7 @@ var running =1;
 $(".gamebtn").click(function() {
     var G = this.id;
     console.log(square);
-    if(document.getElementById(G).textContent  != 'X' && document.getElementById(G).textContent  != 'O' && G!=10 && running == 1){
+    if(document.getElementById(G).textContent  != 'X' && document.getElementById(G).textContent  != 'O' && G!=10 && running == 1 && player_no !=20){
    
   status();
     if(player_no==1){
@@ -18,7 +18,7 @@ $(".gamebtn").click(function() {
         hard_reset();
     }
     else{
-        alert('Wrong Input!');
+        gamebutton_disabler();
     }
     
 });
@@ -118,6 +118,7 @@ function reset() {
     document.getElementById("winrcontainer").style.opacity = "1.0";
     // var square = ['N','N','N','N','N','N','N','N','N'];
     button_glower(10);
+    gamebutton_disabler();
     player_no = 20;
     for(i = 0; i < 9; i++) {
         document.getElementById(i+1).textContent = null;
@@ -185,6 +186,11 @@ function modifier( G, inv){
 		square[G-1] = inv;
 		status();
 		}
+function gamebutton_disabler() {
+    $(function(){
+        $("input.gamebtn").attr("disabled", true);
+      });
+}
 function button_glower(btnId) {
     document.getElementById(btnId).style.boxShadow = "0 3px 50px 0 #878905"
 }
