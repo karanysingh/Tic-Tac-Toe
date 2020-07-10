@@ -7,6 +7,7 @@
     <title>TicTacToe</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="assets/css/Ionicons.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
     <link rel="stylesheet" href="assets/css/Footer-Dark.css">
@@ -36,13 +37,13 @@
                     <div class="btn-group" role="group"><button class="btn btn-primary" id="11" type="button" style="background-color: #4b4c4d;color: #eef4f7;width: 119px;height: 35px;margin-left: -3px;">Play Solo</button></div>
                     <div class="btn-group" role="group"></div>
                 </div>
-            </div>
-        </div>
-        <div class="row" id="theme-1">
-            <div class="col" style="margin-left: 49px;">
-                <div class="btn-toolbar">
-                    <div class="btn-group" role="group"></div>
-                    <div class="btn-group" role="group"></div>
+                <div class="row" id="theme-3" style="margin-top: -16px;margin-bottom: -163px;margin-left: -37px;">
+                    <div class="col" style="margin-left: 49px;">
+                        <div class="btn-toolbar">
+                            <div class="btn-group" role="group"></div>
+                            <div class="btn-group" role="group"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,7 +51,7 @@
     <div class="container-fluid text-center d-flex flex-column flex-grow-1 flex-shrink-1 justify-content-around align-items-center align-content-around flex-nowrap" id="tictactoe" style="margin-left: 212px;">
         <div class="row">
             <div class="col" style="background-size: cover;">
-                <h1 id="XO" style="color: #004438;font-size: 37px;">X Tic Tac Toe O</h1>
+                <h1 id="XO" style="color: #004438;font-size: 37px;font-family: Ionicons;">X Tic Tac Toe O</h1>
             </div>
         </div>
     </div>
@@ -62,7 +63,7 @@
         </div>
     </div>
     <div style="width: 100%;background-color: #193833;margin-top: 51px;"></div>
-    <div class="container-fluid text-center d-flex flex-column flex-grow-1 flex-shrink-1 justify-content-around align-items-center align-content-around flex-nowrap" id="maincontainer" style="margin-left: 212px;max-width: 100%;min-width: 100%;height: 470px;margin-top: 100px;">
+    <div class="container-fluid text-center d-flex flex-column flex-grow-1 flex-shrink-1 justify-content-around align-items-center align-content-around flex-nowrap" id="maincontainer" style="max-width: 100%;min-width: 100%;height: 470px;margin-top: 93px;margin-left: 216px;">
         <div class="row d-flex flex-row flex-grow-1 flex-shrink-1 align-items-center align-content-around game">
             <div class="col" style="width: 89px;height: 89px;"><button class="btn btn-primary gamebtn" id="1" type="button" style="font-size: 30px;min-height: 81px;min-width: 81px;"></button></div>
             <div class="col" style="width: 89px;height: 89px;"><button class="btn btn-primary gamebtn" id="2" type="button" style="font-size: 30px;min-width: 81px;min-height: 81px;"></button></div>
@@ -81,8 +82,89 @@
         <div class="row d-flex flex-row flex-grow-1 flex-shrink-1 justify-content-center align-items-center align-content-around">
             <div class="col" style="width: 89px;height: 89px;"><button class="btn btn-primary gamebtn" id="10" type="button" style="background-color: #bf5b00;font-size: 30px;min-height: 49px;min-width: 81px;margin-top: 24px;margin-left: -17px;color: #024930;font-family: Assistant, sans-serif;">RESET</button></div>
         </div>
+        <div class="row theme-1" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr class="endline" style="background-color: #002649;width: 45px;margin-top: 48px;margin-left: -16px;">
+                <hr class="endline" style="background-color: #002649;width: 45px;margin-top: -42px;">
+                <hr class="endline" style="background-color: #002649;width: 45px;margin-top: 69px;">
+            </div>
+        </div>
+        <div class="row theme-1" style="margin-top: 214px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off1" class="endline" style="background-color: #a3057f;margin-top: -122px;margin-left: -11px;width: 80px;">
+                <hr id="off-2" class="endline" style="background-color: #193833;margin-top: -146px;margin-left: -15px;width: 66px;">
+                <hr id="off-7" class="endline" style="background-color: #193833;margin-top: -92px;margin-left: -15px;width: 66px;">
+                <hr id="off-6" class="endline" style="background-color: #193833;margin-top: -66px;margin-left: -15px;width: 66px;">
+            </div>
+        </div>
+        <div class="row theme-1" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off1" class="endline" style="background-color: #a3057f;margin-top: -106px;margin-left: -11px;width: 80px;">
+                <hr id="off-2" class="endline" style="background-color: #193833;margin-top: -146px;margin-left: -15px;width: 66px;">
+                <hr id="off-7" class="endline" style="background-color: #193833;margin-top: -92px;margin-left: -15px;width: 66px;">
+                <hr id="off-6" class="endline" style="background-color: #193833;margin-top: 34px;margin-left: -15px;width: 66px;">
+            </div>
+        </div>
+        <div class="row theme-1" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off2" class="endline" style="background-color: #9e2828;margin-top: -18px;margin-left: -1px;width: 88px;">
+                <hr id="off-1" class="endline" style="background-color: #9e2828;margin-top: -123px;margin-left: -22px;width: 88px;">
+                <hr id="off-8" class="endline" style="background-color: #9e2828;margin-top: 0px;margin-left: -22px;width: 88px;">
+            </div>
+        </div>
+        <div class="row theme-1" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off3" class="endline" style="background-color: #ff0000;margin-top: -166px;width: 13px;">
+                <hr id="off-3" class="endline" style="background-color: #ff0000;margin-top: -71px;width: 37px;">
+                <hr id="off-5" class="endline" style="background-color: #ff0000;margin-top: -186px;width: 37px;">
+                <hr id="off-4" class="endline" style="background-color: #ff0000;margin-top: 16px;width: 37px;">
+            </div>
+        </div>
+        <div class="row theme-2" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr class="endline" style="background-color: #002649;width: 107px;margin-top: 48px;margin-left: 21px;">
+                <hr class="endline" style="background-color: #002649;width: 73px;margin-top: -42px;margin-left: 19px;">
+                <hr class="endline" style="background-color: #002649;width: 66px;margin-top: 69px;">
+            </div>
+        </div>
+        <div class="row theme-2" style="margin-top: 214px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off1" class="endline" style="background-color: #a3057f;margin-top: -122px;margin-left: -11px;width: 80px;">
+                <hr id="off-2" class="endline" style="background-color: #193833;margin-top: -142px;margin-left: -23px;width: 129px;">
+                <hr id="off-7" class="endline" style="background-color: #193833;margin-top: -92px;margin-left: 1px;width: 66px;">
+                <hr id="off-6" class="endline" style="background-color: #193833;margin-top: -66px;margin-left: 29px;width: 66px;">
+            </div>
+        </div>
+        <div class="row theme-2" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off1" class="endline" style="background-color: #a3057f;margin-top: -106px;margin-left: -11px;width: 80px;">
+                <hr id="off-2" class="endline" style="background-color: #193833;margin-top: -146px;margin-left: 7px;width: 66px;">
+                <hr id="off-7" class="endline" style="background-color: #193833;margin-top: -92px;margin-left: 5px;width: 66px;">
+                <hr id="off-6" class="endline" style="background-color: #193833;margin-top: 34px;margin-left: 8px;width: 66px;">
+            </div>
+        </div>
+        <div class="row theme-2" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off2" class="endline" style="background-color: #9e2828;margin-top: -18px;margin-left: -1px;width: 88px;">
+                <hr id="off-1" class="endline" style="background-color: #9e2828;margin-top: -123px;margin-left: -22px;width: 88px;">
+                <hr id="off-8" class="endline" style="background-color: #9e2828;margin-top: 0px;margin-left: -22px;width: 88px;">
+            </div>
+        </div>
+        <div class="row theme-2" style="margin-top: -17px;">
+            <div class="col" style="margin-left: 49px;">
+                <hr id="off3" class="endline" style="background-color: #ff0000;margin-top: -166px;width: 56px;margin-left: 19px;">
+                <hr id="off-3" class="endline" style="background-color: #ff0000;margin-top: -71px;width: 74px;">
+                <hr id="off-5" class="endline" style="background-color: #ff0000;margin-top: -186px;width: 72px;">
+                <hr id="off-4" class="endline" style="background-color: #ff0000;margin-top: 16px;width: 71px;">
+            </div>
+        </div>
     </div>
-    <div class="container-fluid text-center d-flex flex-column flex-grow-1 flex-shrink-1 justify-content-around align-items-center align-content-around flex-nowrap" id="maincontainer-1" style="margin-left: 224px;margin-top: 7px;background-color: white;margin-bottom: 13px;">
+    <div class="col d-flex flex-row flex-grow-1 flex-shrink-1 flex-fill justify-content-center align-items-start align-content-center align-self-start flex-wrap">
+        <div class="row row-cols-1 text-left d-flex flex-row flex-grow-1 flex-shrink-1 flex-fill justify-content-center align-items-center align-content-center align-self-start" id="rolling" style="margin-top: -16px;margin-bottom: -163px;margin-left: 0px;">
+            <div class="col d-flex flex-row flex-grow-1 flex-shrink-1 flex-fill justify-content-center align-items-center align-content-start align-self-center flex-wrap" id="ball" style="background-color: rgba(0,0,0,0);margin-top: -38px;margin-left: 50px;"><img id="football" src="assets/img/football.png"></div>
+        </div>
+    </div>
+    <div class="container-fluid text-center d-flex flex-column flex-grow-1 flex-shrink-1 justify-content-around align-items-center align-content-around flex-nowrap" id="maincontainer-1" style="margin-left: 224px;margin-top: 35px;background-color: white;margin-bottom: 13px;">
         <div class="row d-flex flex-row flex-grow-1 flex-shrink-1 align-content-around" id="foot">
             <div class="col text-center d-flex flex-row flex-grow-1 flex-shrink-1 flex-fill justify-content-center align-items-center align-content-center align-self-center flex-nowrap item social" style="height: 70px;width: 212px;"><a href="https://www.facebook.com/people/Karan-Yuvraj-Singh/100010694616805" target="_blank"><i class="icon ion-social-facebook"></i></a><a href="#"></a><a href="https://github.com/karanysingh" target="_blank"><i class="icon ion-social-github"></i></a>
                 <a

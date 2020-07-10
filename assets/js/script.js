@@ -289,6 +289,10 @@ function space_Activator() {
     // document.getElementById("XO").style.boxShadow = "1px 10px 100px 20px white";
     document.getElementById("XO").style.animationName = "shadow";
     // document.getElementById("winrcontainer").style.opacity = "0.0";
+    var lines = document.getElementsByClassName("endline");
+    for(var i=0;i<lines.length; i++){
+        lines[i].style.opacity = "0";
+    }
     
     }
 
@@ -316,6 +320,11 @@ document.getElementById("winr").style.backgroundColor = "white";
 document.getElementById("winrcolumn").style.backgroundColor = "white"; 
 document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
 document.body.style.backgroundColor = 'white';
+var lines = document.getElementsByClassName("endline");
+
+for(var i=0;i<lines.length; i++){
+    lines[i].style.opacity = "1";
+}
 
 
 }
@@ -344,6 +353,11 @@ function classic_Activator(){
     document.getElementById("winr").style.backgroundColor = "#313437";   
     document.getElementById("winrcolumn").style.backgroundColor = "#313437"; 
     document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
+    var lines = document.getElementsByClassName("endline");
+
+    for(var i=0;i<lines.length; i++){
+        lines[i].style.opacity = "0.5";
+    }
 }
 
 //Button glower___________________

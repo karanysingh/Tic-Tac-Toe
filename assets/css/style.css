@@ -126,3 +126,79 @@ body {
   animation-duration: 3s;
 }
 
+#XO {
+}
+
+@keyframes ball {
+  0% {
+    /*left: 0;*/
+    margin-left: 0px;
+  }
+  50% {
+    /*margin-left: 500px;*/
+  }
+  100% {
+    margin-left: 90%;
+    transform: rotate(360deg);
+  }
+}
+
+.endline {
+  background-color: #ec3750;
+  /*width: 20px;*/
+  height: 5px;
+  position: fixed;
+  animation-name: endline;
+  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  box-shadow: 0 8px 100px 0 rgb(255,255,255);
+  z-index: -1;
+}
+
+.theme-1 {
+  position: absolute;
+  left: 0;
+  margin-left: -66px;
+}
+
+#off1 {
+  margin-top: 20px;
+}
+
+#maincontainer {
+  z-index: 1;
+}
+
+.gamebtn {
+  z-index: 1;
+}
+
+.theme-2 {
+  right: 57px;
+  margin-top: 20px;
+  float: right;
+  text-align: right;
+  position: absolute;
+}
+
+#ball {
+  background-color: red;
+  position: fixed;
+  border-radius: 100%;
+  position: fixed;
+  animation-name: ball;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-direction: alternate;
+}
+
+#football {
+  width: 50px;
+}
+
+#rolling {
+  left: 0;
+  width: 100%;
+}
+
