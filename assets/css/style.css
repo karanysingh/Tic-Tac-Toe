@@ -147,7 +147,7 @@ body {
   background-color: #ec3750;
   /*width: 20px;*/
   height: 5px;
-  position: fixed;
+  position: absolute;
   animation-name: endline;
   animation-iteration-count: infinite;
   animation-duration: 0.5s;
@@ -197,3 +197,7 @@ body {
   width: 50px;
 }
 
+#solo {
+  position: fixed;
+  z-index: 2;
+}
