@@ -86,7 +86,8 @@ function hard_reset() {
     left_tiles_no = 9;
     left_tiles = [1,2,3,4,5,6,7,8,9];
     if (mode == 2 ){
-    player_no = 2;}
+    player_no = 2;
+}
     else if (mode == 1 ){
         player_no = 1;
     }
@@ -267,19 +268,26 @@ function space_Activator() {
         document.getElementById("winr").style.color = "white";
         document.getElementById("winr").style.backgroundColor = "black";   
         document.getElementById("winrcolumn").style.backgroundColor = "black"; 
-        document.getElementById("winrcontainer").style.backgroundColor = "black"; 
+        document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
     }
     
     // document.getElementById("maincontainer").style.background = "url('/assets/img/energy.png'),url('/assets/img/orb.png') bottom";
     document.getElementById("maincontainer").style.background = "url('http://clipart-library.com/images_k/space-png-transparent/space-png-transparent-12.png') bottom";
     document.getElementById("maincontainer").style.backgroundRepeat = "repeat";
     document.getElementById("maincontainer").style.backgroundSize = "cover";
-    document.getElementById("tictactoe").style.backgroundColor = "black";//backgroundcolor
+    document.getElementById("tictactoe").style.backgroundColor = "#ffffff00";//backgroundcolor
+        document.getElementById("tictactoe").style.backgroundColor = "none";//backgroundcolor
     document.getElementById("XO").style.color = "white";
+    document.getElementById("XO").style.backgroundColor = "#ffffff00";
+
     document.getElementById("maincontainer-1").style.backgroundColor = "black";//backgroundcolor
-    document.getElementById("logoimage").src = "starts1.png";
-    document.getElementById("logoimage").style.width = "700px";
-    
+    // document.getElementById("logoimage").src = "starts1.png";
+    // document.getElementById("logoimage").style.width = "700px";
+    // document.getElementById("XO").style.borderBottom = "2px solid black";
+    document.getElementById("XO").style.borderRadius = "3%";
+    // document.getElementById("XO").style.fontFamily = "Ionicons";
+    // document.getElementById("XO").style.boxShadow = "1px 10px 100px 20px white";
+    document.getElementById("XO").style.animationName = "shadow";
     // document.getElementById("winrcontainer").style.opacity = "0.0";
     
     }
@@ -295,6 +303,7 @@ function default_Activator(){
     document.getElementById(i+1).style.borderColor = "black";
     document.getElementById(i+1).style.color = "black";
 }
+document.getElementById("XO").style.animationName = "shad";
 
 document.getElementById("tictactoe").style.backgroundColor = "white";//backgroundcolor
 document.getElementById("XO").style.color = "black";
@@ -305,7 +314,7 @@ document.getElementById("maincontainer").style.backgroundColor = "white";//backg
 document.getElementById("winr").style.color = "black";
 document.getElementById("winr").style.backgroundColor = "white";   
 document.getElementById("winrcolumn").style.backgroundColor = "white"; 
-document.getElementById("winrcontainer").style.backgroundColor = "white"; 
+document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
 document.body.style.backgroundColor = 'white';
 
 
@@ -318,10 +327,13 @@ function classic_Activator(){
     for(var i = 0; i < 10; i++){
         document.getElementById(i+1).style.boxShadow = "0 0px 2px 0 #878905";
         document.getElementById(i+1).style.backgroundColor = "#5b2626";  
-         document.getElementById(i+1).style.borderColor = "white";
+        document.getElementById(i+1).style.borderColor = "white";
         document.getElementById(i+1).style.color = "white";
     }
     // document.getElementById(i+1).style.border = "#ffffff";
+    document.getElementById("XO").style.animationName = "shad";
+    document.getElementById("XO").style.border = "none";
+
     document.getElementById("tictactoe").style.backgroundColor = "#313437";//backgroundcolor
     document.getElementById("maincontainer").style.background = "none";
     document.getElementById("maincontainer").style.backgroundColor = "#313437";//backgroundcolor
@@ -331,7 +343,7 @@ function classic_Activator(){
     document.getElementById("winr").style.color = "white";
     document.getElementById("winr").style.backgroundColor = "#313437";   
     document.getElementById("winrcolumn").style.backgroundColor = "#313437"; 
-    document.getElementById("winrcontainer").style.backgroundColor = "#313437"; 
+    document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
 }
 
 //Button glower___________________
