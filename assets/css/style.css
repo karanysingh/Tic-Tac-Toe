@@ -129,20 +129,6 @@ body {
 #XO {
 }
 
-@keyframes ball {
-  0% {
-    left: 0;
-    margin-left: 0px;
-  }
-  50% {
-    margin-left: 500px;
-  }
-  100% {
-    margin-left: 900px;
-    transform: rotate(360deg);
-  }
-}
-
 .endline {
   background-color: #ec3750;
   /*width: 20px;*/
@@ -154,6 +140,7 @@ body {
   animation-direction: alternate;
   box-shadow: 0 8px 100px 0 rgb(255,255,255);
   z-index: -1;
+  opacity: 0;
 }
 
 .theme-1 {
@@ -167,11 +154,11 @@ body {
 }
 
 #maincontainer {
-  z-index: 1;
+  /*z-index: 1;*/
 }
 
 .gamebtn {
-  z-index: 1;
+  /*z-index: 1;*/
 }
 
 .theme-2 {
@@ -189,7 +176,6 @@ body {
   position: fixed;
   animation-name: ball;
   animation-iteration-count: infinite;
-
   animation-duration: 3s;
   animation-direction: alternate;
 }
