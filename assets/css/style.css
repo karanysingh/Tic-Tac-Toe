@@ -98,32 +98,31 @@ body {
 
 @keyframes shadow {
   0% {
-    background-color: transparent;
-    box-shadow: 0 8px 40px 0 rgb(255,255,255);
+    box-shadow: 0 8px 20px 0 rgb(255,255,255);
     margin-top: 20px;
-    border-radius: 60%;
+    margin-bottom: 30px;
+    border-radius: 3%;
   }
   50% {
-    box-shadow: 0 4px 20px 0 rgb(255,255,255);
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border-radius: 90%;
+    box-shadow: 0 4px 40px 0 rgb(255,255,255);
+    margin-top: 15px;
+    margin-bottom: 35px;
+    border-radius: 3%;
   }
   100% {
-    box-shadow: 0 8px 40px 0 rgb(255,255,255);
-    background-color: transparent;
+    box-shadow: 0 8px 20px 0 rgb(255,255,255);
     margin-top: 20px;
-    border-radius: 60%;
+    margin-bottom: 30px;
+    border-radius: 3%;
   }
 }
 
 #XO {
-  border-bottom: 2px solid white;
-  border-radius: 63%;
-  animation-iteration-count: infinite;
+  border-radius: 2%;
+  animation-iteration-count: 2;
   animation-direction: normal;
   animation-timing-function: ease-in-out;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 
 #XO {
@@ -169,23 +168,16 @@ body {
   position: absolute;
 }
 
-#ball {
-  background-color: red;
-  position: fixed;
-  border-radius: 100%;
-  position: fixed;
-  animation-name: ball;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-direction: alternate;
-}
-
-#football {
-  width: 50px;
-}
-
 #solo {
   position: fixed;
   z-index: 2;
+}
+
+#loadHead {
+  z-index: 14;
+}
+
+#loadingRow {
+  z-index: 1;
 }
 
