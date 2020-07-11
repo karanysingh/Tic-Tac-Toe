@@ -189,6 +189,7 @@ body {
   position: fixed;
   animation-name: ball;
   animation-iteration-count: infinite;
+  opacity:0;
   animation-duration: 3s;
   animation-direction: alternate;
 }
