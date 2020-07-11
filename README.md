@@ -13,5 +13,5 @@
 * Each user puts an 'X' or 'O' on the one of the tiles alternately.
 * The first one to make a colum, row or a diagonal with the mark, wins the game.
 
-## Upcoming!
-* will add single player soon!
+## Update
+* Single Player Added too
