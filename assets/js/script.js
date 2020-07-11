@@ -268,6 +268,11 @@ function solo_Activator(){
 }
 //Space Theme Activator___________________
 function space_Activator() {
+    document.body.style.backgroundColor = "#130831";
+    document.getElementById("maincontainer").style.backgroundColor = "#130831";
+    setTimeout(function(){
+        document.getElementById("maincontainer").style.background = "url('http://clipart-library.com/images_k/space-png-transparent/space-png-transparent-12.png') bottom";
+    }, 2000);
     //space cartoon colour --> #130831
         document.body.style.backgroundColor = '#130831';
         // btn.style.backgroundColor = "black";
@@ -303,12 +308,11 @@ function space_Activator() {
     $("body").ready(function(){
         document.getElementById("loadHead").style.background = 'url("https://webstockreview.net/images/astronaut-clipart-animation-15.gif") no-repeat right';
         loading();
-    setTimeout(loadingVanish, 2500);
+    setTimeout(loadingVanish, 2000);
     })
     for(var i=0;i<lines.length; i++){
         lines[i].style.opacity = "0";
     }
-    document.getElementById("maincontainer").style.background = "url('http://clipart-library.com/images_k/space-png-transparent/space-png-transparent-12.png') bottom";
 
     }
 
@@ -380,7 +384,7 @@ function classic_Activator(){
     document.getElementById("loadHead").style.background = 'url("https://thumbs.gfycat.com/EcstaticTerribleAnophelesmosquito-small.gif") no-repeat center';
     document.getElementById("loadHead").style.backgroundSize = "contain";
     loading();
-    setTimeout(loadingVanish, 2000);
+    setTimeout(loadingVanish, 1500);
 }
 
 //Button glower___________________
