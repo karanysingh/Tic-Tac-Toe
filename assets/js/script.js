@@ -5,6 +5,7 @@ var running =1;
 var mode = 2;
 var left_tiles_no = 9;
 var left_tiles = [1,2,3,4,5,6,7,8,9];
+$("document").ready(space_Activator());
 $(".gamebtn").click(function() {
     var G = this.id;
     console.log(square);
@@ -69,6 +70,16 @@ function playTurn(){
     let rdm = random_Tile();
     console.log("choosen :----::>"+ rdm )
     return left_tiles[rdm];
+}
+function loading(){
+    document.getElementById("loadHead").style.opacity = "1.0";
+    document.getElementById("loadHead").style.zIndex = "6";
+    document.getElementById("loadingRow").style.zIndex = "6";
+}
+function loadingVanish(){
+    document.getElementById("loadHead").style.opacity = "0.0";
+    document.getElementById("loadHead").style.zIndex = "-1";
+    document.getElementById("loadingRow").style.zIndex = "-1";
 }
 function random_Tile(){
     return Math.floor(Math.random() * Math.floor(left_tiles_no));
@@ -257,7 +268,8 @@ function solo_Activator(){
 }
 //Space Theme Activator___________________
 function space_Activator() {
-        document.body.style.backgroundColor = '#000000';
+    //space cartoon colour --> #130831
+        document.body.style.backgroundColor = '#130831';
         // btn.style.backgroundColor = "black";
         // btns
         for(var i = 0; i < 10; i++){
@@ -266,13 +278,11 @@ function space_Activator() {
         document.getElementById(i+1).style.borderColor = "black";
         document.getElementById(i+1).style.color = "white";
         document.getElementById("winr").style.color = "white";
-        document.getElementById("winr").style.backgroundColor = "black";   
-        document.getElementById("winrcolumn").style.backgroundColor = "black"; 
+        document.getElementById("winr").style.backgroundColor = "#130831";   
+        document.getElementById("winrcolumn").style.backgroundColor = "#130831"; 
         document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
     }
     
-    // document.getElementById("maincontainer").style.background = "url('/assets/img/energy.png'),url('/assets/img/orb.png') bottom";
-    document.getElementById("maincontainer").style.background = "url('http://clipart-library.com/images_k/space-png-transparent/space-png-transparent-12.png') bottom";
     document.getElementById("maincontainer").style.backgroundRepeat = "repeat";
     document.getElementById("maincontainer").style.backgroundSize = "cover";
     document.getElementById("tictactoe").style.backgroundColor = "#ffffff00";//backgroundcolor
@@ -280,7 +290,7 @@ function space_Activator() {
     document.getElementById("XO").style.color = "white";
     document.getElementById("XO").style.backgroundColor = "#ffffff00";
 
-    document.getElementById("maincontainer-1").style.backgroundColor = "black";//backgroundcolor
+    document.getElementById("maincontainer-1").style.backgroundColor = "#130831";//backgroundcolor
     // document.getElementById("logoimage").src = "starts1.png";
     // document.getElementById("logoimage").style.width = "700px";
     // document.getElementById("XO").style.borderBottom = "2px solid black";
@@ -290,15 +300,21 @@ function space_Activator() {
     document.getElementById("XO").style.animationName = "shadow";
     // document.getElementById("winrcontainer").style.opacity = "0.0";
     var lines = document.getElementsByClassName("endline");
+    $("body").ready(function(){
+        document.getElementById("loadHead").style.background = 'url("https://webstockreview.net/images/astronaut-clipart-animation-15.gif") no-repeat right';
+        loading();
+    setTimeout(loadingVanish, 2500);
+    })
     for(var i=0;i<lines.length; i++){
         lines[i].style.opacity = "0";
     }
-    
+    document.getElementById("maincontainer").style.background = "url('http://clipart-library.com/images_k/space-png-transparent/space-png-transparent-12.png') bottom";
+
     }
 
 //Default Theme Function___________________
 function default_Activator(){
-    document.body.style.backgroundColor = 'green';
+    // document.body.style.backgroundColor = 'green';
     // btn.style.backgroundColor = "black";
     // btns
     for(var i = 0; i < 10; i++){
@@ -306,8 +322,11 @@ function default_Activator(){
     document.getElementById(i+1).style.backgroundColor = "rgb(255,255,0)";
     document.getElementById(i+1).style.borderColor = "black";
     document.getElementById(i+1).style.color = "black";
+
 }
-document.getElementById("XO").style.animationName = "shad";
+document.getElementById("loadHead").style.background = 'url("https://4.bp.blogspot.com/-agQQaBYzhY8/VruDQM4tJMI/AAAAAAAACvw/mm2Ov49ChGI/s1600/minion-02.gif") no-repeat center';
+loading();
+setTimeout(loadingVanish, 1500);
 
 document.getElementById("tictactoe").style.backgroundColor = "white";//backgroundcolor
 document.getElementById("XO").style.color = "black";
@@ -358,6 +377,10 @@ function classic_Activator(){
     for(var i=0;i<lines.length; i++){
         lines[i].style.opacity = "0.5";
     }
+    document.getElementById("loadHead").style.background = 'url("https://thumbs.gfycat.com/EcstaticTerribleAnophelesmosquito-small.gif") no-repeat center';
+    document.getElementById("loadHead").style.backgroundSize = "contain";
+    loading();
+    setTimeout(loadingVanish, 2000);
 }
 
 //Button glower___________________
