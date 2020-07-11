@@ -5,6 +5,7 @@ var running =1;
 var mode = 2;
 var left_tiles_no = 9;
 var left_tiles = [1,2,3,4,5,6,7,8,9];
+$("document").ready(default_Activator());
 $(".gamebtn").click(function() {
     var G = this.id;
     console.log(square);
