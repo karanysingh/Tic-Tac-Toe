@@ -101,29 +101,29 @@ body {
     background-color: transparent;
     box-shadow: 0 8px 40px 0 rgb(255,255,255);
     margin-top: 20px;
-    border-radius: 3%;
+    border-radius: 60%;
   }
   50% {
     box-shadow: 0 4px 20px 0 rgb(255,255,255);
     margin-top: 30px;
     margin-bottom: 20px;
-    border-radius: 3%;
+    border-radius: 90%;
   }
   100% {
     box-shadow: 0 8px 40px 0 rgb(255,255,255);
     background-color: transparent;
     margin-top: 20px;
-    border-radius: 3%;
+    border-radius: 60%;
   }
 }
 
 #XO {
   border-bottom: 2px solid white;
-  border-radius: 2%;
-  animation-iteration-count: 2;
+  border-radius: 63%;
+  animation-iteration-count: infinite;
   animation-direction: normal;
   animation-timing-function: ease-in-out;
-  animation-duration: 2s;
+  animation-duration: 3s;
 }
 
 #XO {
@@ -187,13 +187,5 @@ body {
 #solo {
   position: fixed;
   z-index: 2;
-}
-
-#loadHead {
-  z-index: 14;
-}
-
-#loadingRow {
-  z-index: 1;
 }
 
