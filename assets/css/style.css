@@ -181,3 +181,8 @@ body {
   z-index: 1;
 }
 
+#difficulty {
+  position: fixed;
+  z-index: 5;
+}
+

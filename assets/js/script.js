@@ -4,11 +4,20 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 var running =1;
 var mode = 2;
 var left_tiles_no = 9;
+var level = 1;
+var w = 3;
 var left_tiles = [1,2,3,4,5,6,7,8,9];
-$("document").ready(default_Activator());
+var filled_tiles = [];
+
+$("#medium").click(makeItMedium);
+$("#easy").click(makeItEasy);
+$("document").ready(function(){
+    default_Activator();
+    makeItMedium();
+});
 $(".gamebtn").click(function() {
     var G = this.id;
-    console.log(square);
+    // // // console.log(square);
     if (mode == 2) {
         if (document.getElementById(G).textContent  != 'X' && document.getElementById(G).textContent  != 'O' && G!=10 && running == 1 && player_no !=20 && mode==2){
             status();
@@ -19,7 +28,11 @@ $(".gamebtn").click(function() {
                 player_no = 1;
             } 
             input(G);
-            winner();  
+            winner(square);  
+            if (w == 1){
+                declareWinner();
+            }
+            
         }
         else if (G == 10) {
             hard_reset();
@@ -30,19 +43,35 @@ $(".gamebtn").click(function() {
     }
     else if (mode == 1) {
         if (document.getElementById(G).textContent  != 'X' && document.getElementById(G).textContent  != 'O' && G!=10 && running == 1 && player_no !=20 && mode==1){
-            console.log(left_tiles);
+            // console.log(left_tiles);
+            w = 3;
             status();
             if (player_no == 1) {
                 player_no = 2;
-                left_tiles.splice(left_tiles.indexOf(Number(G)), 1);
+                filled_tiles.push(left_tiles.splice(left_tiles.indexOf(Number(G)), 1));
                 input(G);     
-                winner();  
+                winner(square);             
+                if (w == 1){
+                    declareWinner();
+                } 
+                end_check();
+                console.log("Player :" + player_no);
                 if (player_no == 2){
-                player_no = 1;
-                let computer = playTurn();
-                left_tiles.splice(left_tiles.indexOf(Number(computer)), 1);
-                input(computer);
-                winner();  }
+                    player_no = 1;
+                    // console.log(level);
+                    let computer = playTurn();
+                    if(left_tiles_no < 7 && level == 2){
+                        computer = medium();
+                    }
+                    // console.log("COmputer gave: "+ computer);
+                    // console.log("Player :" + player_no);
+                    filled_tiles.push(left_tiles.splice(left_tiles.indexOf(Number(computer)), 1));
+                    input(computer);
+                    winner(square);    
+                    if (w == 1){
+                        declareWinner();
+                    }
+                }
             } 
         }
         else if (G == 10) {
@@ -52,11 +81,15 @@ $(".gamebtn").click(function() {
             gamebutton_disabler();
         }
     }
-
-    console.log(left_tiles);
+    // // console.log(left_tiles);
 });
+
 function input(G) {
+    // console.log("Options left to try ->"+ left_tiles);
+    // console.log("Commanded ->"+G);
     left_tiles_no--;
+    // console.log(G);
+    try{
     if(player_no==1){
     document.getElementById(G).textContent  = 'X';
         inv ='X';
@@ -64,11 +97,16 @@ function input(G) {
     document.getElementById(G).textContent  = 'O';
         inv = 'O'
         }
-    modifier(G, inv);
+    modifier(G, inv);}
+    catch(err){
+        // console.log(err);
+        document.getElementById(left_tiles[0]).textContent  = 'X';
     }
+    }
+
 function playTurn(){
     let rdm = random_Tile();
-    console.log("choosen :----::>"+ rdm )
+    // // console.log("choosen :----::>"+ rdm )
     return left_tiles[rdm];
 }
 function loading(){
@@ -106,6 +144,7 @@ $("#classic").click(classic_Activator);
 function hard_reset() {
     let i = 0;
     left_tiles_no = 9;
+    w = 3;
     left_tiles = [1,2,3,4,5,6,7,8,9];
     if (mode == 2 ){
     player_no = 2;
@@ -126,6 +165,7 @@ function hard_reset() {
 function reset() {
     let i = 0;
     running = 0;
+    w = 3;
     document.getElementById("winrcontainer").style.zIndex = "2";
     document.getElementById("winrcontainer").style.opacity = "1.0";
     // var square = ['N','N','N','N','N','N','N','N','N'];
@@ -136,7 +176,51 @@ function reset() {
     //     document.getElementById(i+1).textContent = null;
     // }
 }         
+function makeACopy(toClone){
+    let temp = [];
+    for(let i = 0; i < toClone.length; i++){
+        temp.push(toClone[i]);
+    }
+    return temp;
+}
 
+function makeItMedium(){
+    level = 2;
+    document.getElementById("easy").style.backgroundColor = "#eef4f7";
+    document.getElementById("medium").style.backgroundColor = "red";
+}
+function makeItEasy(){
+    level = 1;
+    document.getElementById("easy").style.backgroundColor = "red";
+    document.getElementById("medium").style.backgroundColor = "#eef4f7";
+}
+function medium(){
+    if(level == 2 && left_tiles_no < 7){
+    let board = makeACopy(square);
+    let filledBoard = makeACopy(filled_tiles);
+    // console.log(board);
+    // // console.log(filledBoard);
+    for(let i = 0; i < left_tiles_no; i++){
+        // console.log("Trying ->"+board[left_tiles[i]-1]);
+        // console.log("Options ->"+left_tiles);
+        // console.log("Trying tile no."+left_tiles[i]);
+        board[left_tiles[i]-1] = 'O';
+        if(winner(board)){
+            // console.log("MyMove");
+            return left_tiles[i];
+        } 
+        else {
+            // console.log("Defensive!");
+            board[left_tiles[i]-1] = 'X';
+            if(winner(board)){
+            return left_tiles[i];
+            }
+        }
+    }
+    // console.log("Using random move!");
+    return playTurn();
+}
+}
 function ans( o, t, th){
     let r = 0;
 	}
@@ -151,89 +235,49 @@ function status(){
 					}
 		}
 }
-function winner(){
-	let i = 0;
+function declareWinner(){
+    if (mode == 2){
+        document.getElementById("winr").textContent = "Player " + player_no + " won !!";
+        document.getElementById("winr").setAttribute("z-index", "1");
+        reset();
+    }
+    else if(mode == 1){
+        if(player_no == 1){
+            document.getElementById("winr").textContent = "Computer won !!";
+            document.getElementById("winr").setAttribute("z-index", "1");
+            reset(); 
+        }else if (player_no == 2){
+            document.getElementById("winr").textContent = "You won !!";
+            document.getElementById("winr").setAttribute("z-index", "1");
+            reset();
+        }
+    }
+    end_check();
+}
+function winner(board){//makes w = 1 if anyone wins or match is drawn.
+    let i = 0;
+    w = 0;
 	for(i = 0; i < 3; i++) {//
-		            if(square[3*i] == square[3*i+1] && square[3*i+1] == square[3*i + 2] && square[3*i]!='N'){
+		            if(board[3*i] == board[3*i+1] && board[3*i+1] == board[3*i + 2] && board[3*i]!='N'){
                             active = 0;
-                            if (mode == 2){
-                                document.getElementById("winr").textContent = "Player " + player_no + " won !!";
-                                document.getElementById("winr").setAttribute("z-index", "1");
-                                reset();
-                            }
-                            else if(mode == 1){
-                                if(player_no == 1){
-                                    document.getElementById("winr").textContent = "Computer won !!";
-                                    document.getElementById("winr").setAttribute("z-index", "1");
-                                    reset(); 
-                                }else if (player_no == 2){
-                                    document.getElementById("winr").textContent = "You won !!";
-                                    document.getElementById("winr").setAttribute("z-index", "1");
-                                    reset();
-                                }
-                            }
+                            w = 1;
 
-					}else if(square[i]==square[i+3] && square[i+3]==square[i+6] && square[i]!='N'){
+					}else if(board[i]==board[i+3] && board[i+3]==board[i+6] && board[i]!='N'){
                                 active = 0;
-                                if (mode == 2){
-                                    document.getElementById("winr").textContent = "Player " + player_no + " won !!";
-                                    document.getElementById("winr").setAttribute("z-index", "1");
-                                    reset();
-                                }
-                                else if(mode == 1){
-                                    if(player_no == 1){
-                                        document.getElementById("winr").textContent = "Computer won !!";
-                                        document.getElementById("winr").setAttribute("z-index", "1");
-                                        reset(); 
-                                    }else if (player_no == 2){
-                                        document.getElementById("winr").textContent = "You won !!";
-                                        document.getElementById("winr").setAttribute("z-index", "1");
-                                        reset();
-                                    }
-                                }
+                                w = 1;
 			}else if(i==2){
-					if(square[i]==square[i+2] && square[i+2]==square[i+4] && square[i]!='N'){
+					if(board[i]==board[i+2] && board[i+2]==board[i+4] && board[i]!='N'){
 						var active = 0;
-                        if (mode == 2){
-                            document.getElementById("winr").textContent = "Player " + player_no + " won !!";
-                            document.getElementById("winr").setAttribute("z-index", "1");
-                            reset();
-                        }
-                        else if(mode == 1){
-                            if(player_no == 1){
-                                document.getElementById("winr").textContent = "Computer won !!";
-                                document.getElementById("winr").setAttribute("z-index", "1");
-                                reset(); 
-                            }else if (player_no == 2){
-                                document.getElementById("winr").textContent = "You won !!";
-                                document.getElementById("winr").setAttribute("z-index", "1");
-                                reset();
-                            }
-                        }
+                        w = 1;
 						}
 				}else if(i==0){
-					if(square[i] == square[i+4] && square[i+8]==square[i+4] && square[i]!='N'){
+					if(board[i] == board[i+4] && board[i+8]==board[i+4] && board[i]!='N'){
 							active = 0;
-                            if (mode == 2){
-                                document.getElementById("winr").textContent = "Player " + player_no + " won !!";
-                                document.getElementById("winr").setAttribute("z-index", "1");
-                                reset();
-                            }
-                            else if(mode == 1){
-                                if(player_no == 1){
-                                    document.getElementById("winr").textContent = "Computer won !!";
-                                    document.getElementById("winr").setAttribute("z-index", "1");
-                                    reset(); 
-                                }else if (player_no == 2){
-                                    document.getElementById("winr").textContent = "You won !!";
-                                    document.getElementById("winr").setAttribute("z-index", "1");
-                                    reset();
-                                }
-                            }	
+                            w = 1;	
 						}
 					}
     }
-    end_check();
+    return w;
 }
 
 function modifier( G, inv){
@@ -246,14 +290,14 @@ function end_check(){
         document.getElementById("winr").textContent = "Draw!";
         reset();
     }
-    else if(document.getElementById("winr").textContent == "Player " + player_no + " won !!" && left_tiles_no != 0){
-        if(player_no == 2){
-            document.getElementById("winr").textContent = "You won !!";
-        }
-        else if(player_no == 1){
-            document.getElementById("winr").textContent = "Computer won !!";
-        }
-    }
+    // else if(document.getElementById("winr").textContent == "Player " + player_no + " won !!" && left_tiles_no != 0){
+    //     if(player_no == 2){
+    //         document.getElementById("winr").textContent = "You won !!";
+    //     }
+    //     else if(player_no == 1){
+    //         document.getElementById("winr").textContent = "Computer won !!";
+    //     }
+    // }
 }
     
 function gamebutton_disabler() {
@@ -267,6 +311,9 @@ function solo_Activator(){
         document.getElementById("11").textContent = "2 Player";
         button_glower(11);
         hard_reset();
+        document.getElementById("menu").style.marginLeft = "0px";
+        document.getElementById("easy").style.opacity = "1.0";
+        document.getElementById("medium").style.opacity = "1.0";
         player_no = 1;
     }
     else if(mode == 1){
@@ -275,6 +322,9 @@ function solo_Activator(){
         document.getElementById("11").style.boxShadow = "0 3px 2px 0 black";
         hard_reset();
         player_no = 2;
+        document.getElementById("menu").style.marginLeft = "73px";
+        document.getElementById("easy").style.opacity = "0.0";
+        document.getElementById("medium").style.opacity = "0.0";
     }
 }
 //Space Theme Activator___________________
