@@ -7,7 +7,7 @@
 ## Three Different Themes :- 
 * Classic Theme
 * Space Theme
-* Mario Theme
+* Minion Theme
 
 ## How To Play :- 
 * Each user puts an 'X' or 'O' on the one of the tiles alternately.
