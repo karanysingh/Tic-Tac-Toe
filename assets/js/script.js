@@ -392,18 +392,17 @@ function space_Activator() {
         document.getElementById(i+1).style.backgroundColor = "#130831";
         document.getElementById(i+1).style.borderColor = "black";
         document.getElementById(i+1).style.color = "white";
-        document.getElementById("winr").style.color = "white";
-        document.getElementById("winr").style.backgroundColor = "#130831";   
-        document.getElementById("winrcolumn").style.backgroundColor = "#130831"; 
-        document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
     }
-    
+    document.getElementById("winr").style.color = "white";
+    document.getElementById("winr").style.backgroundColor = "#130831";   
+    // document.getElementById("winrcolumn").style.backgroundColor = "#130831"; 
+    document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
     document.getElementById("counter").style.color = "white";
     document.getElementById("scoreNote").style.color = "white";
     document.getElementById("maincontainer").style.backgroundRepeat = "repeat";
     document.getElementById("maincontainer").style.backgroundSize = "cover";
     document.getElementById("tictactoe").style.backgroundColor = "#ffffff00";//backgroundcolor
-        document.getElementById("tictactoe").style.backgroundColor = "none";//backgroundcolor
+    document.getElementById("tictactoe").style.backgroundColor = "none";//backgroundcolor
     document.getElementById("XO").style.color = "white";
     document.getElementById("XO").style.backgroundColor = "#ffffff00";
     
@@ -454,7 +453,7 @@ function default_Activator(){
     document.getElementById("maincontainer").style.backgroundColor = "white";//backgroundcolor
     document.getElementById("winr").style.color = "black";
     document.getElementById("winr").style.backgroundColor = "white";   
-    document.getElementById("winrcolumn").style.backgroundColor = "white"; 
+    document.getElementById("winrcolumn").style.boxShadow = "none"; 
     document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
     document.body.style.backgroundColor = 'white';
 
@@ -492,7 +491,7 @@ function classic_Activator(){
     document.getElementById(10).style.color = "white";
     document.getElementById("winr").style.color = "white";
     document.getElementById("winr").style.backgroundColor = "#313437";   
-    document.getElementById("winrcolumn").style.backgroundColor = "#313437"; 
+    // document.getElementById("winrcolumn").style.backgroundColor = "#313437"; 
     document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
     var lines = document.getElementsByClassName("endline");
 

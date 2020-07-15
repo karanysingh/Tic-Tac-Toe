@@ -70,9 +70,9 @@ body {
 }
 
 #winrcolumn {
-  background-color: white;
-  border: 2px solid black;
-  box-shadow: 0 0px 4px brown;
+  /*background-color: white;*/
+  /*border: 2px solid black;*/
+  /*box-shadow: 0 0px 4px brown;*/
 }
 
 #classic {
@@ -91,6 +91,12 @@ body {
 
 #winr {
   font-family: monospace;
+  border-radius: 2%;
+  animation-name: shadow;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
 }
 
 #XO {
@@ -115,6 +121,9 @@ body {
     margin-bottom: 30px;
     border-radius: 3%;
   }
+}
+
+#winrcolumn {
 }
 
 #XO {
