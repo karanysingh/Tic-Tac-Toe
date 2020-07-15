@@ -15,7 +15,7 @@ var playerTwoName = "You";
 $("#medium").click(makeItMedium);
 $("#easy").click(makeItEasy);
 $("document").ready(function(){
-    fillScores();
+    // fillScores();
     default_Activator();
     makeItMedium();
 });
@@ -439,31 +439,30 @@ function default_Activator(){
     document.getElementById(i+1).style.backgroundColor = "rgb(255,255,0)";
     document.getElementById(i+1).style.borderColor = "black";
     document.getElementById(i+1).style.color = "black";
-
 }
-document.getElementById("counter").style.color = "red";
-document.getElementById("scoreNote").style.color = "red";
-document.getElementById("loadHead").style.background = 'url("https://4.bp.blogspot.com/-agQQaBYzhY8/VruDQM4tJMI/AAAAAAAACvw/mm2Ov49ChGI/s1600/minion-02.gif") no-repeat center';
-loading();
-setTimeout(loadingVanish, 1500);
-document.getElementById("XO").style.boxShadow = "none";
-document.getElementById("tictactoe").style.backgroundColor = "white";//backgroundcolor
-document.getElementById("XO").style.color = "black";
-document.getElementById("maincontainer-1").style.backgroundColor = "white";//backgroundcolor
-document.getElementById(10).style.backgroundColor = "#bf5b00";
-document.getElementById("maincontainer").style.background = "none";
-document.getElementById("maincontainer").style.backgroundColor = "white";//backgroundcolor
-document.getElementById("winr").style.color = "black";
-document.getElementById("winr").style.backgroundColor = "white";   
-document.getElementById("winrcolumn").style.backgroundColor = "white"; 
-document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
-document.body.style.backgroundColor = 'white';
+    document.getElementById("counter").style.color = "red";
+    document.getElementById("scoreNote").style.color = "red";
+    document.getElementById("loadHead").style.background = 'url("https://4.bp.blogspot.com/-agQQaBYzhY8/VruDQM4tJMI/AAAAAAAACvw/mm2Ov49ChGI/s1600/minion-02.gif") no-repeat center';
+    loading();
+    setTimeout(loadingVanish, 1500);
+    document.getElementById("XO").style.boxShadow = "none";
+    document.getElementById("tictactoe").style.backgroundColor = "white";//backgroundcolor
+    document.getElementById("XO").style.color = "black";
+    document.getElementById("maincontainer-1").style.backgroundColor = "white";//backgroundcolor
+    document.getElementById(10).style.backgroundColor = "#bf5b00";
+    document.getElementById("maincontainer").style.background = "none";
+    document.getElementById("maincontainer").style.backgroundColor = "white";//backgroundcolor
+    document.getElementById("winr").style.color = "black";
+    document.getElementById("winr").style.backgroundColor = "white";   
+    document.getElementById("winrcolumn").style.backgroundColor = "white"; 
+    document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
+    document.body.style.backgroundColor = 'white';
 
-var lines = document.getElementsByClassName("endline");
+    var lines = document.getElementsByClassName("endline");
 
-for(var i=0;i<lines.length; i++){
-    lines[i].style.opacity = "1";
-}
+    for(var i=0;i<lines.length; i++){
+        lines[i].style.opacity = "1";
+    }
 
 
 }
