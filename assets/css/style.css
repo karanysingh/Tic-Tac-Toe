@@ -186,3 +186,22 @@ body {
   z-index: 5;
 }
 
+.changeName {
+  z-index: -4;
+  /*z-index: 12;*/
+  position: fixed;
+}
+
+#save:active {
+  background-color: gray;
+}
+
+#fetchName, #fetchName2 {
+  border: 2px solid red;
+  border-radius: 5%;
+}
+
+[id^='fetchName']:hover {
+  border: 2px solid blue;
+}
+

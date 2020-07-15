@@ -10,13 +10,37 @@ var left_tiles = [1,2,3,4,5,6,7,8,9];
 var filled_tiles = [];
 var winCount = 0;
 var winCountPc = 0;
+var playerOneName = "Computer";
+var playerTwoName = "You";
 $("#medium").click(makeItMedium);
 $("#easy").click(makeItEasy);
 $("document").ready(function(){
-    document.getElementById("counter").textContent = "Computer: "+winCountPc + "   You: "+winCount;
+    fillScores();
     default_Activator();
     makeItMedium();
 });
+$("#scores").click(function(){
+    changeNameButtons = document.getElementsByClassName("changeName");
+    changeNameButtons[1].style.opacity = "1.0";
+    changeNameButtons[1].style.zIndex = "12";
+    changeNameButtons[2].style.opacity = "1.0";
+    changeNameButtons[2].style.zIndex = "12";
+    if(mode == 2){
+    changeNameButtons[0].style.opacity = "1.0";
+    changeNameButtons[0].style.zIndex = "12";}
+});
+$("#save").click(function(){
+        changeNameButtons = document.getElementsByClassName("changeName");
+        for(let i = 0;i <changeNameButtons.length;i++){
+        changeNameButtons[i].style.opacity = "0.0";
+        changeNameButtons[i].style.zIndex = "-1";
+        }
+        playerTwoName = $("#fetchName2").val();
+        if(mode == 2){
+            playerOneName = $("#fetchName").val();
+        }
+        fillScores();
+    });
 $(".gamebtn").click(function() {
     var G = this.id;
     // // // console.log(square);
@@ -165,7 +189,7 @@ function hard_reset() {
     }
 }
 function reset() {
-    document.getElementById("counter").textContent = "Computer: "+winCountPc + "   You: "+winCount;
+    fillScores();
     let i = 0;
     running = 0;
     w = 3;
@@ -240,19 +264,27 @@ function status(){
 }
 function declareWinner(){
     if (mode == 2){
-        document.getElementById("winr").textContent = "Player " + player_no + " won !!";
-        document.getElementById("winr").setAttribute("z-index", "1");
-        reset();
-    }
-    else if(mode == 1){
         if(player_no == 1){
             winCountPc++;
-            document.getElementById("winr").textContent = "Computer won !!";
+            document.getElementById("winr").textContent = playerOneName +" won !!";
             document.getElementById("winr").setAttribute("z-index", "1");
             reset(); 
         }else if (player_no == 2){
             winCount++;
-            document.getElementById("winr").textContent = "You won !!";
+            document.getElementById("winr").textContent = playerTwoName +" won !!";
+            document.getElementById("winr").setAttribute("z-index", "1");
+            reset();
+        }
+    }
+    else if(mode == 1){
+        if(player_no == 1){
+            winCountPc++;
+            document.getElementById("winr").textContent = playerOneName +" won !!";
+            document.getElementById("winr").setAttribute("z-index", "1");
+            reset(); 
+        }else if (player_no == 2){
+            winCount++;
+            document.getElementById("winr").textContent = playerTwoName +" won !!";
             document.getElementById("winr").setAttribute("z-index", "1");
             reset();
         }
@@ -289,6 +321,7 @@ function modifier( G, inv){
 		square[G-1] = inv;
 		status();
         }
+
 function end_check(){
     if(left_tiles_no == 0 && document.getElementById("winr").textContent != "Player " + player_no + " won !!") {
         document.getElementById("winr").setAttribute("z-index", "1");
@@ -313,6 +346,10 @@ function gamebutton_disabler() {
 function solo_Activator(){
     if(mode == 2){
         mode = 1;
+        playerOneName = "Computer";
+        playerTwoName = "You";
+        winCount = 0;
+        winCountPc = 0;
         document.getElementById("11").textContent = "2 Player";
         button_glower(11);
         hard_reset();
@@ -320,10 +357,15 @@ function solo_Activator(){
         document.getElementById("easy").style.opacity = "1.0";
         document.getElementById("medium").style.opacity = "1.0";
         player_no = 1;
-        document.getElementById("scores").style.opacity = "0.5";
+        fillScores();
     }
     else if(mode == 1){
+        document.getElementById("")
         mode = 2;
+        playerOneName = "Player 1";
+        winCount = 0;
+        winCountPc = 0;
+        playerTwoName = "Player 2";
         document.getElementById("11").textContent = "Play Solo";    
         document.getElementById("11").style.boxShadow = "0 3px 2px 0 black";
         hard_reset();
@@ -331,7 +373,7 @@ function solo_Activator(){
         document.getElementById("menu").style.marginLeft = "73px";
         document.getElementById("easy").style.opacity = "0.0";
         document.getElementById("medium").style.opacity = "0.0";
-        document.getElementById("scores").style.opacity = "0.0";
+        fillScores();
     }
 }
 //Space Theme Activator___________________
@@ -460,7 +502,9 @@ function classic_Activator(){
     loading();
     setTimeout(loadingVanish, 1500);
 }
-
+function fillScores(){
+    document.getElementById("counter").textContent = playerOneName +":  "+winCountPc + "  "+playerTwoName +": "+winCount;
+}
 //Button glower___________________
 function button_glower(btnId) {
     document.getElementById(btnId).style.boxShadow = "0 3px 50px 0 #878905"
