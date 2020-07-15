@@ -399,6 +399,7 @@ function space_Activator() {
     }
     
     document.getElementById("counter").style.color = "white";
+    document.getElementById("scoreNote").style.color = "white";
     document.getElementById("maincontainer").style.backgroundRepeat = "repeat";
     document.getElementById("maincontainer").style.backgroundSize = "cover";
     document.getElementById("tictactoe").style.backgroundColor = "#ffffff00";//backgroundcolor
@@ -441,6 +442,7 @@ function default_Activator(){
 
 }
 document.getElementById("counter").style.color = "red";
+document.getElementById("scoreNote").style.color = "red";
 document.getElementById("loadHead").style.background = 'url("https://4.bp.blogspot.com/-agQQaBYzhY8/VruDQM4tJMI/AAAAAAAACvw/mm2Ov49ChGI/s1600/minion-02.gif") no-repeat center';
 loading();
 setTimeout(loadingVanish, 1500);
@@ -481,6 +483,7 @@ function classic_Activator(){
     document.getElementById("XO").style.border = "none";
     document.getElementById("XO").style.boxShadow = "none";
     document.getElementById("counter").style.color = "white";
+    document.getElementById("scoreNote").style.color = "white";
 
     document.getElementById("tictactoe").style.backgroundColor = "#313437";//backgroundcolor
     document.getElementById("maincontainer").style.background = "none";
