@@ -8,10 +8,12 @@ var level = 1;
 var w = 3;
 var left_tiles = [1,2,3,4,5,6,7,8,9];
 var filled_tiles = [];
-
+var winCount = 0;
+var winCountPc = 0;
 $("#medium").click(makeItMedium);
 $("#easy").click(makeItEasy);
 $("document").ready(function(){
+    document.getElementById("counter").textContent = "Computer: "+winCountPc + "   You: "+winCount;
     default_Activator();
     makeItMedium();
 });
@@ -163,6 +165,7 @@ function hard_reset() {
     }
 }
 function reset() {
+    document.getElementById("counter").textContent = "Computer: "+winCountPc + "   You: "+winCount;
     let i = 0;
     running = 0;
     w = 3;
@@ -243,10 +246,12 @@ function declareWinner(){
     }
     else if(mode == 1){
         if(player_no == 1){
+            winCountPc++;
             document.getElementById("winr").textContent = "Computer won !!";
             document.getElementById("winr").setAttribute("z-index", "1");
             reset(); 
         }else if (player_no == 2){
+            winCount++;
             document.getElementById("winr").textContent = "You won !!";
             document.getElementById("winr").setAttribute("z-index", "1");
             reset();
@@ -315,6 +320,7 @@ function solo_Activator(){
         document.getElementById("easy").style.opacity = "1.0";
         document.getElementById("medium").style.opacity = "1.0";
         player_no = 1;
+        document.getElementById("scores").style.opacity = "0.5";
     }
     else if(mode == 1){
         mode = 2;
@@ -325,6 +331,7 @@ function solo_Activator(){
         document.getElementById("menu").style.marginLeft = "73px";
         document.getElementById("easy").style.opacity = "0.0";
         document.getElementById("medium").style.opacity = "0.0";
+        document.getElementById("scores").style.opacity = "0.0";
     }
 }
 //Space Theme Activator___________________
@@ -349,6 +356,7 @@ function space_Activator() {
         document.getElementById("winrcontainer").style.backgroundColor = "#ffffff00"; 
     }
     
+    document.getElementById("counter").style.color = "white";
     document.getElementById("maincontainer").style.backgroundRepeat = "repeat";
     document.getElementById("maincontainer").style.backgroundSize = "cover";
     document.getElementById("tictactoe").style.backgroundColor = "#ffffff00";//backgroundcolor
@@ -390,6 +398,7 @@ function default_Activator(){
     document.getElementById(i+1).style.color = "black";
 
 }
+document.getElementById("counter").style.color = "red";
 document.getElementById("loadHead").style.background = 'url("https://4.bp.blogspot.com/-agQQaBYzhY8/VruDQM4tJMI/AAAAAAAACvw/mm2Ov49ChGI/s1600/minion-02.gif") no-repeat center';
 loading();
 setTimeout(loadingVanish, 1500);
@@ -429,6 +438,7 @@ function classic_Activator(){
     document.getElementById("XO").style.animationName = "shad";
     document.getElementById("XO").style.border = "none";
     document.getElementById("XO").style.boxShadow = "none";
+    document.getElementById("counter").style.color = "white";
 
     document.getElementById("tictactoe").style.backgroundColor = "#313437";//backgroundcolor
     document.getElementById("maincontainer").style.background = "none";
