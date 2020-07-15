@@ -13,5 +13,12 @@
 * Each user puts an 'X' or 'O' on the one of the tiles alternately.
 * The first one to make a colum, row or a diagonal with the mark, wins the game.
 
+## How To Change Name :- 
+* Click On the scores
+* Fil the name fields
+* press ok
+
 ## Update
 * Single Player Added too
+* New Design
+* Custom Names
