@@ -6,14 +6,61 @@ var mode = 2;
 var left_tiles_no = 9;
 var level = 1;
 var w = 3;
+var clear = 0;
 var left_tiles = [1,2,3,4,5,6,7,8,9];
 var filled_tiles = [];
 var winCount = 0;
 var winCountPc = 0;
 var playerOneName = "Player 1";
 var playerTwoName = "Player 2";
+var $animation_elements = $('#copyright');
+var $window = $(window);
+var x = window.matchMedia("(min-width: 640px)")
 $("#medium").click(makeItMedium);
 $("#easy").click(makeItEasy);
+$window.scroll(function(){
+    console.log("scroll top: "+$window.scrollTop());
+    if($window.scrollTop() < 280){
+        clear = 1;
+        clearify();
+    }if($window.scrollTop() > 280){
+        clear = 0;
+        clearify();
+    }
+});
+$(".game").click(function(){
+    clear = 0;
+    clearify();
+});
+function clearify(){
+    if(clear == 0){
+            clear = 1;
+            document.getElementById("theme").style.marginTop ="-600px";
+            document.getElementById("solo").style.marginTop ="-600px";
+            $(".vanish").css("opacity","0.0");
+            $("#scores").css("position","fixed");
+            $("#scores").css("top","0px");
+            $("#scores").css("width","100%");
+            $("#scores").css("margin-top","5px");
+            $("#scores").css("margin-left","4px");
+            $("#scores").css("z-index","6");
+            $("#scores").css("background-color","blue");
+            document.getElementById("maincontainer").style.webkitBoxShadow = "inset 0px 0px 9px rgba(0,0,0,.5)";
+      } else {
+            $(".vanish").css("opacity","1.0");
+            $("#scores").css("margin-top","-13px");
+            $("#scores").css("margin-bottom","17px");
+            $("#scores").css("margin-left","-15px");
+            $("#scores").css("background-color","transparent");
+            $("#scores").css("margin-right","-15px");
+            $("#scores").css("z-index","1");
+            $("#scores").css("position","relative");
+            document.getElementById("theme").style.marginTop ="20px";
+            document.getElementById("solo").style.marginTop ="47px";
+            document.getElementById("maincontainer").style.webkitBoxShadow = "inset 0px 0px 0px rgba(0,0,0,.5)";
+      }
+}
+  
 $("document").ready(function(){
     // fillScores();
     default_Activator();

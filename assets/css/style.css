@@ -8,6 +8,12 @@ html {
   overflow-x: hidden;
 }
 
+@media (min-width: 640px) {
+  html {
+    zoom: 1.5;
+  }
+}
+
 .btn {
   box-shadow: 0 0px 5px 0 #000000;
   border: 2px solid black;
@@ -212,5 +218,19 @@ body {
 
 [id^='fetchName']:hover {
   border: 2px solid blue;
+}
+
+.vanisher {
+  opacity: 0;
+}
+
+@media (min-width: 640px) {
+  #winrro, #winrcontainer {
+    margin-top: -250px;
+  }
+}
+
+#scores {
+  position: relative;
 }
 
