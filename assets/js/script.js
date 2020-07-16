@@ -10,8 +10,8 @@ var left_tiles = [1,2,3,4,5,6,7,8,9];
 var filled_tiles = [];
 var winCount = 0;
 var winCountPc = 0;
-var playerOneName = "Computer";
-var playerTwoName = "You";
+var playerOneName = "Player 1";
+var playerTwoName = "Player 2";
 $("#medium").click(makeItMedium);
 $("#easy").click(makeItEasy);
 $("document").ready(function(){
