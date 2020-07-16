@@ -6,6 +6,7 @@ var mode = 2;
 var left_tiles_no = 9;
 var level = 1;
 var w = 3;
+var theme = 1;
 var clear = 0;
 var left_tiles = [1,2,3,4,5,6,7,8,9];
 var filled_tiles = [];
@@ -41,10 +42,19 @@ function clearify(){
             $("#scores").css("position","fixed");
             $("#scores").css("top","0px");
             $("#scores").css("width","100%");
-            $("#scores").css("margin-top","5px");
+            $("#scores").css("margin-top","2px");
             $("#scores").css("margin-left","4px");
             $("#scores").css("z-index","6");
-            $("#scores").css("background-color","blue");
+            if(theme == 1){
+            $("#scores").css("background-color","yellow");
+            }
+            else if(theme == 2){
+                $("#scores").css("background-color","white");
+                $("#counter").css("color","blue");
+            }
+            else if(theme == 3){
+                $("#scores").css("background-color","green");
+            }
             document.getElementById("maincontainer").style.webkitBoxShadow = "inset 0px 0px 9px rgba(0,0,0,.5)";
       } else {
             $(".vanish").css("opacity","1.0");
@@ -425,6 +435,7 @@ function solo_Activator(){
 }
 //Space Theme Activator___________________
 function space_Activator() {
+    theme = 2;
     document.body.style.backgroundColor = "#130831";
     document.getElementById("maincontainer").style.backgroundColor = "#130831";
     setTimeout(function(){
@@ -517,6 +528,7 @@ function classic_Activator(){
     document.body.style.backgroundColor = '#313437';
     // document.html.style.backgroundColor = '#313437';
     //btns
+    theme = 3;
     for(var i = 0; i < 10; i++){
         document.getElementById(i+1).style.boxShadow = "0 0px 2px 0 #878905";
         document.getElementById(i+1).style.backgroundColor = "#5b2626";  
