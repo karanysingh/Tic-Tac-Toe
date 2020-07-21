@@ -31,6 +31,7 @@ $window.scroll(function(){
     }}
 });
 $(".game").click(function(){
+    console.log(x);
     if(x){
     clear = 0;
     clearify();
