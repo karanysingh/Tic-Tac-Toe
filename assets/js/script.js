@@ -568,7 +568,7 @@ function classic_Activator(){
     setTimeout(loadingVanish, 1500);
 }
 function fillScores(){
-    document.getElementById("counter").textContent = playerOneName +":  "+winCountPc + "  "+playerTwoName +": "+winCount;
+    document.getElementById("counter").textContent = playerOneName +":  "+winCountPc +" V/s "+ "  "+playerTwoName +": "+winCount;
 }
 //Button glower___________________
 function button_glower(btnId) {
