@@ -21,17 +21,20 @@ $("#medium").click(makeItMedium);
 $("#easy").click(makeItEasy);
 $window.scroll(function(){
     console.log("scroll top: "+$window.scrollTop());
+    if(x){
     if($window.scrollTop() < 280){
         clear = 1;
         clearify();
     }if($window.scrollTop() > 280){
         clear = 0;
         clearify();
-    }
+    }}
 });
 $(".game").click(function(){
+    if(x){
     clear = 0;
     clearify();
+    }
 });
 function clearify(){
     if(clear == 0){
