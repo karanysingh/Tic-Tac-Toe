@@ -444,7 +444,7 @@ function space_Activator() {
     document.body.style.backgroundColor = "#130831";
     document.getElementById("maincontainer").style.backgroundColor = "#130831";
     setTimeout(function(){
-        document.getElementById("maincontainer").style.background = "url('http://clipart-library.com/images_k/space-png-transparent/space-png-transparent-12.png') bottom";
+        document.getElementById("maincontainer").style.background = "url('assets/img/space-png-transparent-12.png') bottom";
     }, 2000);
     //space cartoon colour --> #130831
         document.body.style.backgroundColor = '#130831';
