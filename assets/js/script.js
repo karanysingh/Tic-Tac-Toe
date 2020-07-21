@@ -34,6 +34,7 @@ $(".game").click(function(){
     console.log(x.matches);
     if(x.matches){
     clear = 0;
+    window.scrollTo(0,300);
     clearify();
     }
 });
