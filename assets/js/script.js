@@ -495,6 +495,7 @@ function space_Activator() {
 function default_Activator(){
     // document.body.style.backgroundColor = 'green';
     // btn.style.backgroundColor = "black";
+    theme = 1;
     // btns
     for(var i = 0; i < 10; i++){
     document.getElementById(i+1).style.boxShadow = "0 0px 4px 0 black";
