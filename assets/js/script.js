@@ -20,8 +20,8 @@ var x = window.matchMedia("(min-width: 640px)")
 $("#medium").click(makeItMedium);
 $("#easy").click(makeItEasy);
 $window.scroll(function(){
-    console.log("scroll top: "+$window.scrollTop());
-    if(x){
+    // console.log("scroll top: "+$window.scrollTop());
+    if(x.matches){
     if($window.scrollTop() < 280){
         clear = 1;
         clearify();
@@ -31,8 +31,8 @@ $window.scroll(function(){
     }}
 });
 $(".game").click(function(){
-    console.log(x);
-    if(x){
+    console.log(x.matches);
+    if(x.matches){
     clear = 0;
     clearify();
     }
